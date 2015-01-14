@@ -10,26 +10,8 @@
 
 // Function to take an unknown data type pointer and increases it's referenced value
 
-// Param: Pointer, byte size of pointer type
-void increaser (void * data, int size) {
-    // if data is empty
-    if (data == NULL)
-        std::cout << "Invalid data passed in\n";
-    // if data is type char (1 byte)
-    else if (size == 1) {
-        char* Ptr = (char*)data; // Point new char pointer to data cast as a char pointer
-        (*Ptr)++; // Increment the value of the derefernced data
-    }
-    // if data is type int (4 byte)
-    else if (size == 4) {
-        int* Ptr = (int*)data; // Point new int pointer to data cast as an int pointer
-        (*Ptr)++; // Increment the value of the derefernced data
-    }
-}
-
-// Overloaded Increaser
-// Param: Pointer, byte size of pointer type, value to increment by
-void increaser (void * data, int size, int incrementBy) {
+// Param: Pointer, byte size of pointer type, value to increment by (default: 1)
+void increaser (void * data, int size, int incrementBy=1) {
     if (data == NULL)
         std::cout << "Invalid data passed in\n";
     else if (size == 1) {
@@ -60,10 +42,10 @@ int main (int argc, const char* argv[]) {
     std::cout << "x = " << x << std::endl;
     std::cout << "num = " << num << std::endl;
     
-    increaser(cPtr, sizeof(char), 5);
     increaser(cPtr, sizeof(char));
-    increaser(iPtr, sizeof(int), 5);
+    increaser(cPtr, sizeof(char), 5);
     increaser(iPtr, sizeof(int));
+    increaser(iPtr, sizeof(int), 5);
     increaser(nullPtr, sizeof(int));
     increaser(nullPtr, sizeof(int), 5);
     
