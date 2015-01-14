@@ -34,7 +34,7 @@ int main (int argc, const char* argv[]) {
     
     char * cPtr = &x;
     int * iPtr = &num;
-    void * nullPtr = NULL; // For testing the null case
+    void * nullPtr = nullptr; // For testing the null case
     
     std::cout << "char size of " << sizeof(x) << " B and int size of " << sizeof(num) << " B\n";
     
