@@ -14,12 +14,12 @@
 void increaser (void * data, int size, int incrementBy=1) {
     if (data == NULL)
         std::cout << "Invalid data passed in\n";
-    else if (size == 1) {
+    else if (size == sizeof(char)) {
         char* Ptr = (char*)data;
         for (int i = 0; i < incrementBy; i++)
             (*Ptr)++;
     }
-    else if (size == 4) {
+    else if (size == sizeof(int)) {
         int* Ptr = (int*)data;
         for (int i = 0; i < incrementBy; i++)
             (*Ptr)++;
