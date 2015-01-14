@@ -5,8 +5,4 @@ Wrote for practice
 
 To use:
 
-increaser(ptr to data, size of data type)
-
-OR
-
-increaser(ptr to data, size of data type, int to increment by)
+increaser(ptr to data, byte size of type, <int> to increment by)
